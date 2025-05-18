@@ -1,0 +1,65 @@
+body {
+    background-image: url('376649.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: #f7fafd; /* fallback szín */
+}
+@media screen and (max-width: 768px) {
+    body {
+        background-position: 30% center;
+    }
+}
+
+
+        h1{
+            font-size: 90px;
+            border-style:solid;
+            border-radius: 50px;
+            color: white;
+            text-align: center;
+        }
+        h2{
+            color:white;
+            text-align: left;
+        }
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            margin-bottom: 2em;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        th, td {
+            padding: 12px 14px;
+            border: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        thead tr {
+            background: black;
+            color: #fff;
+        }
+        tbody tr:nth-child(even) {
+            background: #f3f3f3;
+        }
+        tbody tr:hover {
+            background: #e1f3f7;
+        }
+        .note {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 1em;
+        }
+       /* .longtext {
+            white-space: pre-line;
+        }
+       */
+        body {
+            background-image: url('376649.jpg'); /* a kép elérési útvonala */
+            background-repeat: no-repeat;
+            background-size: cover;       /* vagy 'contain', attól függően mit szeretnél */
+            background-attachment: fixed; /* így nem mozog a háttér görgetéskor */
+            background-position: center;
+        }
