@@ -13,6 +13,7 @@ body {
     position: relative;
     min-height: 100vh;
     padding: 1em; /* Itt a térköz a tartalom körül */
+    padding-bottom: 70px; /* Hely az fix lejátszónak alul! */
 }
 
 /* Fix háttérkép, ami mindig a teljes képernyőt lefedi */
@@ -44,6 +45,11 @@ h2{
     text-align: left;
     margin: 0.5em 0; /* Hozzáadtam margót */
 }
+h3{
+    color: white;
+}
+
+/* ... A táblázat stílusok itt maradnak, csak a rövidítés miatt kihagytam a kódblokkból ... */
 
 table {
     font-size: 20px;
@@ -62,9 +68,6 @@ table {
     backdrop-filter: blur(2px);
     box-sizing: border-box; /* Kritikus fontosságú! */
 }
-
-/* ... a többi stílus változatlan marad ... */
-
 th, td {
     padding: 16px 12px;
 }
@@ -94,10 +97,7 @@ tr:last-child td {
     color: whitesmoke;
     margin-bottom: 1em;
 }
-/* .longtext {
-    white-space: pre-line;
-}
-*/
+
 .reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -106,4 +106,98 @@ tr:last-child td {
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- AUDIOLEJÁTSZÓ STÍLUSOK --- */
+
+#audio-player-container {
+    position: fixed; /* Fixen a képernyő alján */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Stílusok a háttérhez (a táblázathoz hasonlóan) */
+    background: rgba(20, 20, 20, 0.8); 
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px); 
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 1000; /* Legyen felül */
+}
+
+.controls-and-progress {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.controls-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+#audio-player-container button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em; /* Ikon mérete */
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+#audio-player-container button:hover {
+    color: #ccc; /* Halványítás rámutatáskor */
+}
+
+.progress-area {
+    display: flex;
+    flex-grow: 1; /* A sáv foglalja el a rendelkezésre álló helyet */
+    align-items: center;
+    gap: 10px;
+}
+
+#current-time, #duration {
+    font-size: 0.9em;
+    min-width: 40px; /* Hely a 00:00-nak */
+    text-align: center;
+    color: #f2f2f2;
+}
+
+#progress-bar {
+    -webkit-appearance: none; /* Alapértelmezett stílus eltávolítása */
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3); /* Sáv háttér színe */
+    border-radius: 4px;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+/* Progress bar (Chrome/Safari) */
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: white; /* Csúszka színe */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Progress bar (Firefox) */
+#progress-bar::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* A már lejátszott rész színe (kis trükkel) */
+#progress-bar {
+    /* Ezt a JavaScript-ben állítjuk be inline stílusként! */
 }

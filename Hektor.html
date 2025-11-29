@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Gőzmozdony gyártás története</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <h1 class="reveal">
+    HEKTOR, A KIS FEKETE MOZDONY
+    </h1>
+ <h3 class="reveal">    
+Valamikor réges-régen, egyik év őszén született egy kis mozdony.<br><br>
+A bácsik, akik készítették feljegyeztek róla mindent, ami fontos, ám ezek csupán csak számok voltak. Nem volt még neve, de a műhelyben mindenki úgy becézte: „A Kis Fekete”. Azért hívták így, mert a kazánja úgy csillogott, mint a szénpor, amikor rásütött a reggeli nap fénye.<br><br>
+Feladatot kapott a kis mozdony. Húznia kellett a vonatok kocsijait. Így hát elindult nagy pöfögve, bejárta az egész országot. Sok-sok helyen járt, és mindenhol nagyon szerették. Az útjai során járt Debrecenben, Kalocsán, Kiskunfélegyházán, Miskolcon, Kazincbarcikán, aztán szolgált még Gyöngyös és Jászapáti állomásain is. Rendezte a kocsikat, ahogy kellett, sorba szépen, vagy az utasokkal teli vagonokat húzta nagy boldogan. Vidáman fütyült ahol csak lehetett és kellett.
+<br><br>Azt mondták neki az emberek:<br><br>
+-- Kis gőzös, te jobban ismered már az országunkat, mint mi. Több helyen jártál, mint mi mozdonyvezetők.<br><br>
+Aztán az évek során, mikor megkopott rajta a festék, gondos kezek újjávarázsolták. Újból csillogott szép feketén. Ilyenkor megint fiatalnak érezte magát, megelevenedett, füstje magasra szállt, büszkén futott a síneken.<br>
+Jöttek újabb városok, Szombathely, Kaposvár. S egyszer csak eljött az ideje, hogy megpihenjen. Letelt a szolgálata.<br><br>
+Ekkor úgy gondolták, legyen helye egy város állomásán, hadd csodálhassák meg az arra utazók. Így került Siófok városába.<br><br>
+Gondos kezek többször szépítgették, javítgatták, új fényes festék került rá.<br><br>
+S képzeljétek csak el, azt mondják a vasutas bácsik, hogy amikor egészen közel hajolnak hozzá, mintha beszélne, s ezt mondaná:<br><br>
+„Ne feledjetek el! Én még mindig készen állok az indulásra!”<br><br>
+S úgy gondolom, hogy álmában Hektor, a kis Fekete, most is fut, szalad a síneken.
+Bejárja a városokat, falvakat, ahol integetnek neki a felnőttek és a gyerekek, és nagy boldogan köszöntik:<br><br>
+-Szervusz Hektor, Kis Fekete! Gyere máskor is!<br><br>
+Vidáman fütyül egyet, s aztán szalad tovább a következő állomásig.
+    </h3>
+
+    <div id="audio-player-container">
+        <audio id="audio-element" src="gozos_hang.mp3"></audio> 
+        
+        <div class="controls-and-progress">
+            <div class="controls-buttons">
+                <button id="restart-button" title="Elölről"><i class="fas fa-redo"></i></button>
+                <button id="play-pause-button" title="Lejátszás/Szünet"><i class="fas fa-play"></i></button>
+            </div>
+            
+            <div class="progress-area">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" min="0" max="100">
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+    </div>
+    </body>
+<script src="script.js"></script>
+
+</html>
