@@ -14,9 +14,9 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll); 
 
-/* --- AUDIOLEJÁTSZÓ LOGIKA --- */
+
+/* --- AUDIOLEJÁTSZÓ LOGIKA (A KÓD NAGY RÉSZE AZ EREDETI) --- */
 
 const audio = document.getElementById('audio-element');
 const playPauseButton = document.getElementById('play-pause-button');
@@ -68,7 +68,7 @@ restartButton.addEventListener('click', () => {
     if (!audio.paused && !audio.ended) { 
         audio.play(); // Ha épp játszott, indítsa újra
     } else {
-         updateProgressAndTimes(); // Csak frissíti az időt 0:00-ra
+          updateProgressAndTimes(); // Csak frissíti az időt 0:00-ra
     }
 });
 
@@ -99,7 +99,7 @@ function updateProgressAndTimes() {
         const percentage = (currentTime / duration) * 100;
         progressBar.style.background = `linear-gradient(to right, white 0%, white ${percentage}%, rgba(255, 255, 255, 0.3) ${percentage}%, rgba(255, 255, 255, 0.3) 100%)`;
     } else {
-         // Alapértelmezett háttér, ha nincs még betöltve (0:00)
+        // Alapértelmezett háttér, ha nincs még betöltve (0:00)
         progressBar.style.background = 'rgba(255, 255, 255, 0.3)';
     }
 }
@@ -111,9 +111,26 @@ progressBar.addEventListener('input', () => {
     updateProgressAndTimes(); // Azonnal frissítjük a kijelzést
 });
 
-// Betöltéskor is ellenőrizzük (ha esetleg már gyorsan görgetnénk)
+
+/* --- ÚJ: EGYSZERI TÁJOLÁS ELLENŐRZÉS ÉS EREDETI LOAD FUNKCIÓK ÖSSZEVONÁSA --- */
+
 window.addEventListener('load', () => {
+    // 1. Reveal scrollozáskor (eredeti funkció)
     revealOnScroll();
+    
+    // 2. Tájolás figyelmeztetés (Megjelenik minden betöltésnél, ha álló a mód)
+    const orientationWarning = document.getElementById('orientation-warning');
+
+    // Ellenőrizzük, hogy álló (portré) tájolású-e az eszköz
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        
+        // Megmutatjuk a figyelmeztetést
+        if (orientationWarning) {
+             orientationWarning.classList.remove('hidden');
+        }
+    }
+    
+    // 3. Audiolejátszó inicializálása betöltéskor (eredeti funkció)
     // Fontos: a loadedmetadata nem mindig fut le load-kor, de az audio.readyState segít.
     if (audio.readyState >= 2) {
         durationDisplay.textContent = formatTime(audio.duration);
