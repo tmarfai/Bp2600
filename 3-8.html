@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>A Kis Fekete, Hektor ,a bátor gőzös meséje</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <h1 class="reveal">
+    A Kis Fekete, Hektor ,a bátor gőzös meséje
+    </h1>
+ <h3 class="reveal">    
+Egyszer volt, hol nem volt, még az óriási, csillogó város fölött is túl,  a budapesti gyár egyik nagy csarnokában, született egy aprócska mozdony. Amikor a kalapácsok elhallgattak, és a szikrák is elszálltak, ott állt ő: fényes, fekete, csillogó oldalú kis gőzös.
+A mesterek el is nevezték:<br><br>
+– Ő bizony a Kis Fekete!<br><br>
+A mozdony félénken pöfögött egyet.<br><br>
+– Pöf… Szervusztok! Készen állok a kalandra!<br><br>
+És bizony készen is állt. Amint a sínekre gurították, úgy indult el, mintha szárnyai nőttek volna. Gőzfelhője fehér pamacsként libbent a levegőben, mint egy kíváncsi kis felhőcske.
+A Kis Fekete bejárta az egész országot.
+Hol a Tiszán át vezetett útja, hol erdők susogtak körülötte, máshol dombok integettek neki.
+Minden állomáson más-más kaland várta:
+Debrecenben a reggeli napfény simogatta a kéményét.
+Kalocsán a paprikaszag csiklandozta a füstjét.
+Kiskunfélegyházán a vagonok bújócskát játszottak vele.
+Vésztőn a békák brekegtek neki azalatt, míg pihent.
+Szegeden a nagy folyó, a Tisza tükrében látta meg saját büszke alakját.
+A mozdonyvezetők pedig mindig ezt mondták:<br><br>
+– Ez a kis gőzös többet tud a világról, mint mi mindannyian együtt!<br><br>
+A Kis Fekete pedig kacagva pöfögött tovább:<br><br>
+– Pöf-pöf! Mert én csak megyek és megyek!<br><br>
+Évek teltek el, és egyszer csak, Szombathelyen, varázslatos dolog történt vele.
+Kinyitották a gépház ajtaját, felragyogtak a lámpák, és a mesterek új kazánt, új festést és vadonatúj számtáblát adtak neki. Mintha csak tündérport szórtak volna rá!<br><br>
+Amikor végzett a nagy átalakulás, a gőzös körbenézett.<br><br>
+– Hűha! Micsoda csillogás! Micsoda erő!
+Ekkor kapta új, ünnepi nevét: 376 649. Hektor<br><br>
+A Kis Fekete úgy érezte, új szíve dobog benne, és még sok-sok kalandtól várnak rá.Miskolcon, majd Kaposváron száguldott tovább, sípjával vidáman fütyörészve:<br><br>
+– Tűűű-tűűű! Itt a Kis Fekete, vigyázat, jövök!
+Aztán egy napon mégis azt mondták neki:
+– Drága gőzös, most már elég volt a sok munkából. Pihenj meg, hiszen annyi helyre elvitted az embereket, annyi mosolyt hoztál az arcokra.<br><br>
+A Kis Fekete először szomorúan pöfentett…
+De ekkor egy kedves hang így szólt hozzá:<br><br>
+– Ne félj! Mostantól a gyerekek meséinek őrzője leszel. Bárki meglátogathat, megsimogathat, és meghallgathatja a történetedet.<br><br>
+Így került Siófokra, a Balaton partjára, ahol reggelente a nap aranyszínűre festi az oldalát. Ott áll most is, méltósággal, a sínek csendes őre A kis fekete, Hektor.<br><br>
+És ha egy kisgyerek óvatosan végigsimítja a hideg acélját, a mozdony olyankor halkan, titokzatosan suttog:
+– Pöf… Én még mindig készen állok az indulásra. Csak mondd, merre menjünk!
+    </h3>
+
+    <div id="audio-player-container">
+        <audio id="audio-element" src="gozos_hang.mp3"></audio> 
+        
+        <div class="controls-and-progress">
+            <div class="controls-buttons">
+                <button id="restart-button" title="Elölről"><i class="fas fa-redo"></i></button>
+                <button id="play-pause-button" title="Lejátszás/Szünet"><i class="fas fa-play"></i></button>
+            </div>
+            
+            <div class="progress-area">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" min="0" max="100">
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+    </div>
+    </body>
+<script src="script.js"></script>
+
+</html>

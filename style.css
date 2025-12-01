@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: transparent; /* Fontos: a html háttér is átlátszó! */
+    background: transparent;
     box-sizing: border-box;
     overflow-x: hidden;
 }
@@ -12,8 +12,8 @@ body {
     background: transparent;
     position: relative;
     min-height: 100vh;
-    padding: 1em; /* Itt a térköz a tartalom körül */
-    padding-bottom: 70px; /* Hely az fix lejátszónak alul! */
+    padding: 1em;
+    padding-bottom: 90px; /* Hely az fix lejátszónak alul - NÖVELVE! */
 }
 
 /* Fix háttérkép, ami mindig a teljes képernyőt lefedi */
@@ -23,7 +23,7 @@ body::after {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0; /* Jobb, mint a 100vw/100vh, mert így nincs fehér csík */
+    bottom: 0;
     z-index: -1;
     background: url('376649_mobil.png') center center no-repeat;
     background-size: cover;
@@ -37,19 +37,21 @@ h1{
     color: white;
     text-align: center;
     font-size: 50px;
-    margin: 0.5em 0; /* Hozzáadtam margót a címsorokhoz */
+    margin: 0.5em 0;
 }
 h2{
     font-style: italic;
     color: white;
     text-align: left;
-    margin: 0.5em 0; /* Hozzáadtam margót */
+    margin: 0.5em 0;
 }
 h3{
     color: white;
+    font-size: 1.2em; /* ÚJ: Megnöveltük a betűméretet */
+    line-height: 1.5; /* JAVASLAT: Sorok közti távolság a jobb olvashatóságért */
 }
 
-/* ... A táblázat stílusok itt maradnak, csak a rövidítés miatt kihagytam a kódblokkból ... */
+/* ... A táblázat stílusok itt maradnak ... */
 
 table {
     font-size: 20px;
@@ -58,7 +60,7 @@ table {
     border-spacing: 0;
     margin-bottom: 2em;
     width: 100%;
-    max-width: calc(100% - 2em); /* 1em térköz mindkét oldalon */
+    max-width: calc(100% - 2em);
     margin-left: auto;
     margin-right: auto;
     background: rgba(20, 20, 20, 0.6);
@@ -66,7 +68,7 @@ table {
     border-radius: 16px;
     overflow: hidden;
     backdrop-filter: blur(2px);
-    box-sizing: border-box; /* Kritikus fontosságú! */
+    box-sizing: border-box;
 }
 th, td {
     padding: 16px 12px;
@@ -111,67 +113,66 @@ tr:last-child td {
 /* --- AUDIOLEJÁTSZÓ STÍLUSOK --- */
 
 #audio-player-container {
-    position: fixed; /* Fixen a képernyő alján */
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     
-    /* Stílusok a háttérhez (a táblázathoz hasonlóan) */
     background: rgba(20, 20, 20, 0.8); 
     box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
     backdrop-filter: blur(4px); 
     color: white;
-    padding: 10px 20px;
+    padding: 15px 25px; /* NÖVELVE: Több hely a lejátszó körül */
     box-sizing: border-box;
-    z-index: 1000; /* Legyen felül */
+    z-index: 1000;
 }
 
 .controls-and-progress {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 20px; /* NÖVELVE: Nagyobb térköz a gombok és sáv között */
 }
 
 .controls-buttons {
     display: flex;
-    gap: 10px;
+    gap: 15px; /* NÖVELVE: Nagyobb térköz a gombok között */
 }
 
 #audio-player-container button {
     background: transparent;
     border: none;
     color: white;
-    font-size: 1.5em; /* Ikon mérete */
+    font-size: 2em; /* NÖVELVE: Gomb ikon mérete */
     cursor: pointer;
-    padding: 5px;
+    padding: 8px; /* NÖVELVE: Nagyobb kattintható terület */
     transition: color 0.2s;
 }
 
 #audio-player-container button:hover {
-    color: #ccc; /* Halványítás rámutatáskor */
+    color: #ccc;
 }
 
 .progress-area {
     display: flex;
-    flex-grow: 1; /* A sáv foglalja el a rendelkezésre álló helyet */
+    flex-grow: 1;
     align-items: center;
     gap: 10px;
 }
 
 #current-time, #duration {
-    font-size: 0.9em;
-    min-width: 40px; /* Hely a 00:00-nak */
+    font-size: 1em; /* NÖVELVE: Idő kijelző mérete */
+    min-width: 45px;
     text-align: center;
     color: #f2f2f2;
 }
 
 #progress-bar {
-    -webkit-appearance: none; /* Alapértelmezett stílus eltávolítása */
+    -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.3); /* Sáv háttér színe */
-    border-radius: 4px;
+    height: 10px; /* NÖVELVE: Sáv vastagsága */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px; /* Kicsit nagyobb lekerekítés */
     cursor: pointer;
     flex-grow: 1;
 }
@@ -180,24 +181,24 @@ tr:last-child td {
 #progress-bar::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 16px;
-    height: 16px;
-    background: white; /* Csúszka színe */
+    width: 20px; /* NÖVELVE: Csúszka mérete */
+    height: 20px; /* NÖVELVE: Csúszka mérete */
+    background: white;
     border-radius: 50%;
     cursor: pointer;
 }
 
 /* Progress bar (Firefox) */
 #progress-bar::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
+    width: 20px; /* NÖVELVE: Csúszka mérete */
+    height: 20px; /* NÖVELVE: Csúszka mérete */
     background: white;
     border: none;
     border-radius: 50%;
     cursor: pointer;
 }
 
-/* A már lejátszott rész színe (kis trükkel) */
+/* A már lejátszott rész színe (kis trükkel) - Ezt a JS állítja */
 #progress-bar {
     /* Ezt a JavaScript-ben állítjuk be inline stílusként! */
 }

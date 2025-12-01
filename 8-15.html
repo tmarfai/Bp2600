@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>A 376 649-es gőzös meséje(a kis mozdony, aki sosem adta fel)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <h1 class="reveal">
+    A 376 649-es gőzös meséje(a kis mozdony, aki sosem adta fel)
+    </h1>
+ <h3 class="reveal">    
+Valamikor réges-régen, 1910 őszén, a budapesti MÁVAG gyár egyik csarnokában megszületett egy vadonatúj mozdony. A gyár könyvében így jegyezték fel:
+Gyártási szám: 2600. Típus: 91.01. Nyomtáv: normál. Elrendezés: 1C1-n2vt.
+A dátum mellé pedig odaírták: Kiszállítva 1910. november 23., hivatalos első próbaútjára 1910. november 28-án került sor.<br><br>
+Akkor még nem volt neve, csak száma: MÁV TVa 7763.
+De a műhelyben mindenki csak úgy hívta: „a Kis Fekete” – mert fényes, új kazánja úgy csillogott, mint a friss szénpor a reggeli napfényben.<br><br>
+A Kis Fekete nemsokára szolgálatba állt, és pöfögve elindult az országot járni. 1911-ben már MÁV 376,160 néven húzta a szerelvényeket, később, 1925-ben átkeresztelték MÁV 376,327-re.
+És bizony, hosszú út állt előtte.<br><br>
+1917. augusztus 6-án Debrecenbe vezényelték, onnan Kalocsára került személyvonatok élére, majd Kiskunfélegyházán volt tartalék ahol az állomásra érkező vagonakat rendezgette.
+A harmincas években Vésztőn pöfögött, a háború idején pedig Szegeden szolgált.<br><br>
+Aztán jött Miskolc, Kazincbarcika, Gyöngyös, Jászapáti – szinte az egész országot bejárta.
+A gépészek sokszor azt mondták róla:<br><br>
+„Ez a gőzös jobban ismeri Magyarországot, mint bármelyik mozdonyvezető!”<br><br>
+Sok viszontagság után, 1961-ben Szombathelyen új életet kapott: nagyjavításon esett át, új kazánt, új számtáblát és friss festést kapott.
+Ekkor lett hivatalosan: MÁV 376,649.
+Úgy érezte, mintha újra fiatal volna — a füstje megint magasra szállt, a kazánja büszkén dohogott.<br><br>
+Utána Miskolcon dolgozott tovább, majd 1978. május 31-én Kaposvárra helyezték, ahol szeretettel fogadták.
+Ott, a Zselic kapujában, a jó levegőn és szénillatban teltek utolsó évei, amíg 1982. december 16-án hivatalosan is leállították, és a Közlekedési Múzeum tulajdonába került.
+Leltári száma: KM Gy5-555 / 21-81.3.1. lett.<br><br>
+Aztán egy kis „optikai fiatalítást” is kapott 1989-ben Bátaszéken, mielőtt 1990 áprilisában új otthonra lelt itt Siófokon, ahol ma is itt áll, büszkén, méltósággal.<br><br>
+És ha valaki odalép hozzá, és megsimítja a hideg acélt, néha mintha halkan megszólalna:<br><br>
+„Nem feledjetek el… Én még mindig készen állok az indulásra.”
+    </h3>
+
+    <div id="audio-player-container">
+        <audio id="audio-element" src="gozos_hang.mp3"></audio> 
+        
+        <div class="controls-and-progress">
+            <div class="controls-buttons">
+                <button id="restart-button" title="Elölről"><i class="fas fa-redo"></i></button>
+                <button id="play-pause-button" title="Lejátszás/Szünet"><i class="fas fa-play"></i></button>
+            </div>
+            
+            <div class="progress-area">
+                <span id="current-time">0:00</span>
+                <input type="range" id="progress-bar" value="0" min="0" max="100">
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+    </div>
+    </body>
+<script src="script.js"></script>
+
+</html>
