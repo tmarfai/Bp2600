@@ -27,6 +27,11 @@ body::after {
     z-index: -1;
     background: url('376649_mobil.png') center center no-repeat;
     background-size: cover;
+    
+    /* MÓDOSÍTÁS: Eltávolítja a parallax hatást. */
+    background-attachment: scroll; 
+    /* Megjegyzés: Bár a position: fixed; maradt, a 'scroll'
+    utasítja a böngészőt, hogy a képet a dokumentumhoz rögzítse. */
 }
 
 h1{
@@ -111,7 +116,7 @@ tr:last-child td {
     transform: translateY(0);
 }
 
-/* --- AUDIOLEJÁTSZÓ STÍLUSOK --- */
+/* --- AUDIOLEJÁTSZÓ STÍLUSOK (A KORÁBBI NÖVELT ÉRTÉKEK MARADNAK) --- */
 
 #audio-player-container {
     position: fixed;
